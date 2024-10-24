@@ -207,6 +207,22 @@
         $("#remain").html("残り時間： " + period);
         
     }
+
+     function updateBackgroundColor(rest) {
+        if (rest <= 10) {
+            $("body").css("background-color", "blue");
+        } else if (rest <= 20) {
+            $("body").css("background-color", "orange");
+        } else if (rest <= 30){
+            $("body").css("background-color", "pink");
+        } else if (rest <= 40){
+            $("body").css("background-color", "white");
+        } else if (rest <= 50){
+            $("body").css("background-color", "purple");
+        } else {
+            $("body").css("background-color", "brown");
+        }
+    }
     
  
     // 繰り返し実行する処理
@@ -217,6 +233,8 @@
         $("#time").html("経過時間： " + etime);
         $("#remain").html("残り時間： " + rest);
         analog(rest);
+
+         updateBackgroundColor(rest);
 
         }
         if(rest <= 0){
